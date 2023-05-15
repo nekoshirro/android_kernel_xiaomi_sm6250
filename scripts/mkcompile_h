@@ -46,17 +46,17 @@ else
 fi
 if test -z "$KBUILD_BUILD_USER"; then
 #	LINUX_COMPILE_BY=$(whoami | sed 's/\\/\\\\/')
-	LINUX_COMPILE_BY="SonalSingh"
+	LINUX_COMPILE_BY="Hafidz"
 else
 #	LINUX_COMPILE_BY=$KBUILD_BUILD_USER
-	LINUX_COMPILE_BY="SonalSingh"
+	LINUX_COMPILE_BY="Hafidz"
 fi
 if test -z "$KBUILD_BUILD_HOST"; then
 #	LINUX_COMPILE_HOST=`hostname`
-	LINUX_COMPILE_HOST="Ubuntu-22.04"
+	LINUX_COMPILE_HOST="Alchemist"
 else
 #	LINUX_COMPILE_HOST=$KBUILD_BUILD_HOST
-	LINUX_COMPILE_HOST="Ubuntu-22.04"
+	LINUX_COMPILE_HOST="Alchemist"
 fi
 
 UTS_VERSION="#$VERSION"

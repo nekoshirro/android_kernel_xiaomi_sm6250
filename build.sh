@@ -13,29 +13,33 @@ KERNEL_SUBLEVEL="$( cat Makefile | grep SUBLEVEL | head -n 1 | sed "s|.*=||1" | 
 
 FINAL_KERNEL_VERSION=${KERNEL_VERSION}.${KERNEL_PATCHLEVEL}.${KERNEL_SUBLEVEL}
 
-FINAL_KERNEL_ZIP=Etherious-${FINAL_KERNEL_VERSION}-miatoll-$(date '+%d%m%Y').zip
+FINAL_KERNEL_ZIP=Maverick-${FINAL_KERNEL_VERSION}-joyeuse-$(date '+%d%m%Y').zip
 
 [[ -z "$KERNEL_VERSION" ]] && echo -e "Error!" && exit 1
 [[ -z "$KERNEL_PATCHLEVEL" ]] && echo -e "Error!" && exit 1
 [[ -z "$KERNEL_SUBLEVEL" ]] && echo -e "Error!" && exit 1
 
 echo -e "$blue***********************************************"
-echo "         ETHERIOUS KERNEL          "
+echo "         MAVERICK KERNEL          "
 echo -e "***********************************************$nocol"
-echo YOUR ETHERIOUS KERNEL VERSION IS "${KERNEL_VERSION}.${KERNEL_PATCHLEVEL}.${KERNEL_SUBLEVEL}"
+echo YOUR MAVERICK KERNEL VERSION IS "${KERNEL_VERSION}.${KERNEL_PATCHLEVEL}.${KERNEL_SUBLEVEL}"
 
 export PATH="$HOME/cosmic/bin:$PATH"
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
-if ! [ -d "$HOME/cosmic" ]; then
-echo "Cosmic clang not found! Cloning..."
-if ! git clone -q https://gitlab.com/GhostMaster69-dev/cosmic-clang.git --depth=1 --single-branch ~/cosmic; then
+if ! [ -d "$HOME/Alchemist" ]; then
+echo "Alchemist clang not found! Cloning..."
+if ! git clone -q https://gitlab.com/nekoshirro/Alchemist-LLVM.git --depth=1 --single-branch ~/Alchemist; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi
 fi
+
+# Get newest AnyKernel3 as always
+rm -rf AnyKernel3
+git clone https://gitlab.com/nekoshirro/AnyKernel3.git
 
 # Speed up build process
 MAKE="./makeparallel"
