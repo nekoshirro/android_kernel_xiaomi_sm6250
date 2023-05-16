@@ -96,7 +96,6 @@ cd ..
 rm -rf $ANYKERNEL3_DIR/$FINAL_KERNEL_ZIP
 rm -rf $ANYKERNEL3_DIR/Image.gz-dtb
 rm -rf $ANYKERNEL3_DIR/dtbo.img
-rm -rf out/
 
 sha1sum $FINAL_KERNEL_ZIP
 
