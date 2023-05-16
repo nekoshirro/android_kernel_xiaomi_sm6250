@@ -55,6 +55,7 @@ nocol='\033[0m'
 echo "**** Cleaning ****"
 mkdir -p out
 make O=out clean
+make mrproper
 
 echo "**** Kernel defconfig is set to $KERNEL_DEFCONFIG ****"
 echo -e "$blue***********************************************"
