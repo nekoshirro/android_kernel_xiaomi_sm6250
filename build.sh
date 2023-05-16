@@ -24,10 +24,10 @@ echo "         MAVERICK KERNEL          "
 echo -e "***********************************************$nocol"
 echo YOUR MAVERICK KERNEL VERSION IS "${KERNEL_VERSION}.${KERNEL_PATCHLEVEL}.${KERNEL_SUBLEVEL}"
 
-export PATH="$HOME/cosmic/bin:$PATH"
+export PATH="$HOME/Alchemist/bin:$PATH"
 export ARCH=arm64
 export SUBARCH=arm64
-export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
+export KBUILD_COMPILER_STRING="$($HOME/Alchemist/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
 if ! [ -d "$HOME/Alchemist" ]; then
 echo "Alchemist clang not found! Cloning..."
